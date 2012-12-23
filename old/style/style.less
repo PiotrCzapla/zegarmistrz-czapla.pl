@@ -1,0 +1,292 @@
+// CSS Reset
+@import "include/reset.less";
+
+@font-face {
+    font-family: 'ColaborateRegular';
+    src: url('../font/ColabReg-webfont.eot');
+    src: url('../font/ColabReg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/ColabReg-webfont.woff') format('woff'),
+         url('../font/ColabReg-webfont.ttf') format('truetype'),
+         url('../font/ColabReg-webfont.svg#ColaborateRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+// Core variables and mixins
+@import "include/variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "include/mixins.less";
+
+// Grid system and page structure
+@import "include/scaffolding.less";
+@import "include/grid.less";
+@import "include/layouts.less";
+
+// Base CSS
+@import "include/type.less";
+//@import "include/code.less";
+//@import "include/forms.less";
+//@import "include/tables.less";
+
+// Components: common
+@import "include/font-awesome.less";
+//@import "include/sprites.less";
+@import "include/dropdowns.less";
+//@import "include/wells.less";
+//@import "include/component-animations.less";
+//@import "include/close.less";
+
+// Components: Buttons & Alerts
+@import "include/buttons.less";
+@import "include/button-groups.less";
+@import "include/alerts.less"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
+
+// Components: Nav
+//@import "include/navs.less";
+//@import "include/navbar.less";
+//@import "include/breadcrumbs.less";
+//@import "include/pagination.less";
+//@import "include/pager.less";
+
+// Components: Popovers
+//@import "include/modals.less";
+//@import "include/tooltip.less";
+//@import "include/popovers.less";
+
+// Components: Misc
+//@import "include/thumbnails.less";
+//@import "include/labels-badges.less";
+//@import "include/progress-bars.less";
+//@import "include/accordion.less";
+//@import "include/carousel.less";
+//@import "include/hero-unit.less";
+
+// Utility classes
+@import "include/utilities.less"; // Has to be last to override when necessary
+
+body.home {
+}
+
+header {
+    .container {
+        border-bottom:1px solid @linkColor;
+        margin-bottom:20px;
+        padding:40px 0 10px 0;
+    }
+    a {
+        color:#000;
+        font-weight:bold;
+    }
+    a:focus,
+    a:hover,
+    a:active {
+        color:#666;
+        text-decoration:none;
+    }
+    .brand,
+    .brand:focus,
+    .brand:hover,
+    .brand:active {
+        color:#000;
+        font:40px @logoFont;
+        span {
+            color:#666;
+        }
+    }
+    ul.nav-main,
+    ul.nav-utility {
+        font-size:20px;
+        list-style:none;
+        margin-left:0;
+        li {
+            display: block;
+            float: left;
+            margin:10px 30px 0 0;
+        }
+        .active {
+            color:@linkColor;
+        }
+    }
+    ul.nav-utility {
+        margin-top:10px;
+        font-size:16px;
+        color:@grayLight;
+        a { color:@grayLight }
+    }
+    ul.nav-utility:hover {
+        color:#000;
+        a { color:#000 }
+    }
+
+}
+
+body.home article {
+    height:450px;
+    background:#fff;
+    section {
+        width:inherit;
+        padding-top:90px;
+        position:absolute;
+        font-size:36px;
+        line-height:1.5em;
+        text-shadow:#fff 1px 1px 0px;
+        .small {
+            font-size:26px;
+            line-height:1.25em;
+            clear:both;
+        }
+        a.f {
+            color:#3B5998;
+        }
+        a.t {
+            color:#9AE4E8;
+        }
+    }
+}
+
+article {
+    nav {
+        position:fixed;
+        width:inherit;
+        font-size:14px;
+        ul, li {
+            list-style:none;
+            margin:0;
+        }
+        li {
+            line-height:16px;
+            margin-bottom:1px;
+            span {
+                display: block;
+                text-transform:uppercase;
+                font-size:0.85em;
+                font-weight:bold;
+                padding:20px 0 5px 0;
+                color:#666;
+            }
+            ul {
+                border-top:1px solid #fff;
+            }       
+        }
+        a {
+            display:block;
+            padding:7px 10px;
+            font-weight:bold;
+            text-decoration:none;
+            color:#000;
+            background:@btnBackgroundHighlight;
+        }
+        li li a {
+            font-weight:normal;
+            background:@btnBackground;
+            i {
+                color:#666;
+            }
+        }
+        a.active {
+            color:@linkColor;
+        }
+        a:focus,
+        a:hover,
+        a:active {
+            color: lighten(@linkColor, 5%);
+            .transition(background-position .1s linear);
+        }
+    }
+    .hero {
+        height:275px;
+        font:18px @headingsFontFamily;
+        h1 {
+            margin-bottom:10px;
+        }
+        p {
+            max-width:350px;
+        }
+    }
+    .hero-products {
+        background:url(../img/hero_products.png) 100% 100% no-repeat;
+    }
+    .hero-autonomy {
+        background:url(../img/hero_autonomy.png) 100% 100% no-repeat;
+    }
+    .hero-mobile {
+        background:url(../img/hero_mobile.png) 100% 100% no-repeat;
+    }
+    .hero-about {
+        background:url(../img/hero_about.png) 100% 100% no-repeat;
+    }
+    .hero-contact {
+        background:url(../img/hero_contact.png) 100% 100% no-repeat;
+    }
+    section {
+        padding-bottom:40px;
+        a.pull-right, .pull-right a {
+            width:180px;
+            text-align:left;
+        }
+        h1, h2 {
+            border-bottom:1px solid @grayLighter;
+        }
+        h1, h2 {
+            margin:1.5em 0;
+        }
+        h3, h4 {
+            margin:1.5em 0 0.5em;
+        }
+        p, ul, .row-limited {
+            max-width: 570px;
+        }
+        .icon-fade {
+            color:@grayLight;
+            font-size:40px;
+        }
+        .icon-fade.pull-right {
+            margin:10px 0 20px 20px;
+        }
+        .icon-fade.pull-left {
+            margin:10px 20px 20px 0;
+        }
+        ul.service-overview {
+            list-style:none;
+            margin:0;
+            font-size:14px;
+            font-weight:bold;
+            li {
+                padding-top:5px;
+                margin-top:5px;
+                border-top:1px solid @grayLighter;
+            }
+            li:first-child {
+                border:none;
+            }
+        }
+    }
+    hr {
+        display:none;
+    }
+}
+
+body.page footer,
+footer .container {
+    border-top:1px solid @grayLighter;
+    margin-top:40px;
+    padding:20px 0 40px 0;
+}
+
+@import "include/responsive.less";
+
+
+/* ===== Primary Styles ========================================================
+   Author:
+   ========================================================================== */
+
+
+
+
+
+
+
+
+
+
+
